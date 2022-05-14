@@ -68,5 +68,5 @@
 ------
 ##### 界面预览
 
-   ![](preview\1.png)
-   ![](preview\2.png)
+   ![主界面](preview/1.png)
+   ![添加服务器界面](preview/2.png)
