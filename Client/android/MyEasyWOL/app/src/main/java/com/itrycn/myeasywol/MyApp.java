@@ -23,7 +23,6 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 
 import com.itrycn.myeasywol.db.DBHelper;
-import com.itrycn.myeasywol.utils.sdkinit.ANRWatchDogInit;
 import com.itrycn.myeasywol.utils.sdkinit.XBasicLibInit;
 import com.itrycn.myeasywol.utils.sdkinit.XUpdateInit;
 
@@ -60,10 +59,6 @@ public class MyApp extends Application {
 
         XUpdateInit.init(this);
         XUpdateInit.checkUpdate(this,false);
-        //运营统计数据运行时不初始化
-
-        //ANR监控
-        ANRWatchDogInit.init();
     }
 
 

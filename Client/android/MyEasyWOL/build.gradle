@@ -1,4 +1,7 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+    var = build_versions
+    build_versions = build_versions
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
     apply from: './versions.gradle'

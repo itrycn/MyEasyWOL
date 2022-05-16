@@ -37,19 +37,6 @@ project.configurations.each { configuration ->
         //页面路由
         configuration.dependencies.add(getProject().dependencies.create('com.github.xuexiangjys.XRouter:xrouter-compiler:1.0.1'))
     }
-    //设置泄露监测leak为始终release模式。
-    configuration.dependencies.add(getProject().dependencies.create('com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'))
-    if (configuration.name == "debugImplementation") {
-        //内存泄漏监测leak
-        //configuration.dependencies.add(getProject().dependencies.create('com.squareup.leakcanary:leakcanary-android:1.6.3'))
-    }
-    if (configuration.name == "releaseImplementation") {
-        //内存泄漏监测leak
-        //configuration.dependencies.add(getProject().dependencies.create('com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'))
-    }
-    if (configuration.name == "testImplementation") {
-        //内存泄漏监测leak
-        configuration.dependencies.add(getProject().dependencies.create('com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'))
-    }
+
 }
 

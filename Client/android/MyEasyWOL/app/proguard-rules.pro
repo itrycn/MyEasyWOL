@@ -44,10 +44,10 @@
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
 -keep public class * extends android.support.v4.**
--keep public class com.android.vending.licensing.ILicensingService
+# -keep public class com.android.vending.licensing.ILicensingService
 
 #如果有引用v4包可以添加下面这行
--keep public class * extends android.support.v4.app.Fragment
+# -keep public class * extends android.support.v4.app.Fragment
 
 ##########JS接口类不混淆，否则执行不了
 -dontwarn com.android.JsInterface.**
@@ -134,6 +134,24 @@
 -dontwarn com.google.zxing.**
 -keep class com.google.zxing.**{*;}
 
+# greendao
+-keep class org.greenrobot.greendao.**{*;}
+-keep public class * extends org.greenrobot.greendao.AbstractDao
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+    public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
+-keepclassmembers class **$Properties {*;}
+
+#optional
+-keep class net.sqlcipher.**{*;}
+-keep public interface net.sqlcipher.database.**
+-dontwarn net.sqlcipher.database.**
+-dontwarn org.greenrobot.greendao.**
+-keep class okhttp3.internal.http.RealInterceptorChain.** { *; }
+-keep class com.android.** { *; }
+-keep class android.os.** { *; }
+-keep class android.app.** { *; }
 #SignalR推送
 -keep class microsoft.aspnet.signalr.** { *; }
 
@@ -177,7 +195,7 @@
 -keep class org.xz_sale.entity.**{*;}
 -keep class com.google.gson.** {*;}
 -keep class com.google.**{*;}
--keep class sun.misc.Unsafe { *; }
+# -keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
 -keep class com.google.gson.examples.android.model.** { *; }
 
@@ -200,12 +218,12 @@
     long producerIndex;
     long consumerIndex;
 }
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
+# -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+#     rx.internal.util.atomic.LinkedQueueNode producerNode;
+# }
+# -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+#     rx.internal.util.atomic.LinkedQueueNode consumerNode;
+# }
 
 -dontwarn okio.**
 -dontwarn javax.annotation.Nullable
